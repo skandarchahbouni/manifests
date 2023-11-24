@@ -28,3 +28,7 @@
 * An operator for the `communicationBetweenTwoApps` CRD must be implemented  (easy to implement, just configure the ExternalNameService_template and apply it).
 * Adding a `Daemon or timer` handler to watch and update the status of the CRD instance.
 
+
+## What can also be done: 
+* Adding support for statefullSet and volumes. 
+
