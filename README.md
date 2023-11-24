@@ -27,7 +27,7 @@
 
 ## Operator: 
 * Based on the chosen proposition, some modifications for the current operator will be required (namespace offloading, exposing metrics).
-* An operator for the `communicationBetweenTwoApps` CRD must be implemented  (easy to implement, just configure the ExternalNameService_template and apply it).
+* An operator for the `communicationBetweenTwoApps` CRD must be implemented  (configure the ExternalNameService_template and apply it and establish communication between the necessary clusters).
 * Adding a `Daemon or timer` handler to watch and update the status of the CRD instance.
 
 
