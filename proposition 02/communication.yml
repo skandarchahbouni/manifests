@@ -1,0 +1,48 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: communicationBetweenTwoApps.charity-project.eu
+spec:
+  group: charity-project.eu
+  names:
+    kind: communicationBetweenTwoApps
+    plural: communicationBetweenTwoApps
+    singular: communicationBetweenTwoApps
+    shortNames:
+      - comBet2apps 
+  scope: Namespaced
+  versions:
+  - name: v1
+    served: true
+    storage: true
+  schema:
+    openAPIV3Schema:
+      type: object
+      properties:
+        spec:
+          type: object
+          properties:
+            Application_1:
+              name: string        # for example: frontend
+            Application_2:
+              name: string        # for example: rest-api
+              component: string   # for example: node-app
+              port: integer       # for example: 4000
+  subresources:
+    status: {}
+
+
+--- 
+# The creation of an instance from "communicationBetweenTwoApp" CRD triggers the creation of a service of type ExternalName 
+# as follows
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: {component_name}        # Application_2.component, following the example above: node-app
+#   namespace: {namespace_app_1}  # Application_1.name, following the example above : frontend
+# spec:
+#   type: ExternalName
+#   externalName: "{component_name}.{namespace_app_2}.svc.cluster.local"    # node-app.rest-api.svc.cluster.local
+#   ports: 
+#   - port: {port} # following the example above: 4000

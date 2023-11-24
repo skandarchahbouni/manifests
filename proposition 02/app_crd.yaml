@@ -1,0 +1,70 @@
+# ************** Application CRD **************#
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: Applications.charity-project.eu
+spec:
+  scope: Namespaced
+  group: charity-project.eu
+  names:
+    kind: Application
+    plural: Applications
+    singular: Application
+    shortNames:
+      - app
+      - apps
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                name:
+                  type: string
+                #******* Removing this field *******#
+                # cluster:    ===> REMOVING THIS FIELD
+                #   type: string
+                # *********************************#
+                owner:
+                  type: string
+
+                #******* Adding this field *******#
+                components:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name: 
+                        type: string
+                      cluster: 
+                        type: string
+                # *********************************#
+
+                #******* Adding this field (communications between components in the same application: for offloading namespace......) *******#
+                internalcommuinications:
+                  type: array
+                  items:
+                    type: array
+                    minItems: 2
+                    maxItems: 2
+                    items:
+                      type: string
+                # *********************************#
+            status:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true
+
+      additionalPrinterColumns:
+        - name: Current status # Rrunning, pending, Failed
+          type: string
+          priority: 0
+          jsonPath: .status.app_watch.current_status
+        - name: Details
+          type: object
+          priority: 0
+          jsonPath: .status.app.details # If status is Running, No details to provide
