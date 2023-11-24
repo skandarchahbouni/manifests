@@ -54,7 +54,8 @@ spec:
                     maxItems: 2
                     items:
                       type: string
-                # *********************************#
+                      
+            # ************************ Status ************************#
             status:
               type: object
               x-kubernetes-preserve-unknown-fields: true
@@ -63,8 +64,8 @@ spec:
         - name: Current status # Rrunning, pending, Failed
           type: string
           priority: 0
-          jsonPath: .status.app_watch.current_status
+          jsonPath: .status.watch_app.current_status
         - name: Details
           type: object
           priority: 0
-          jsonPath: .status.app.details # If status is Running, No details to provide
+          jsonPath: .status.watch_app.details # If status is Running, No details to provide

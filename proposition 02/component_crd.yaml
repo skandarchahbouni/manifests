@@ -89,7 +89,7 @@ spec:
               #x-kubernetes-validations:
               #- rule: "self.all(x, size(self.filter(e, x.name == e.name)) == 1)"
 
-            #
+            # ************************ Status ************************#
             status:
               type: object
               x-kubernetes-preserve-unknown-fields: true
@@ -102,4 +102,4 @@ spec:
         - name: Details
           type: object
           priority: 0
-          jsonPath: .status.daemon_fn.details # If status is Running, No details to provide
+          jsonPath: .status.component_watch.details # If status is Running, No details to provide

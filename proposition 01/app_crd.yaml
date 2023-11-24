@@ -125,4 +125,4 @@ spec:
         - name: Details
           type: object
           priority: 0
-          jsonPath: .status.daemon_fn.details # If status is Running, No details to provide (None)
+          jsonPath: .status.watch_app.details # If status is Running, No details to provide (None)
