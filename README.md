@@ -9,6 +9,8 @@
     * Adding status (Running, Pending, Failed).
     * Removing cluster field from app, and adding `internalCommunications` to describe the communications between the deffirent components. 
     * Adding `is_exposing_metrics` to automatically create a `ServiceMonitor` and allow prometheus scrape the metrics.
+    * Adding `Replicas field` instead of hardcoding it to one.
+ 
 - **Proposition 02:**
     * `Application CRD` and `Component CRD` separated.
     - The App CRD must be applied     first, and then the components of the app. If the Component CRD is applied before the App CRD, an exception will be fired.
