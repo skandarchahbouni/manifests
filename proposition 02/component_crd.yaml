@@ -34,6 +34,11 @@ spec:
                   type: string
                 image:
                   type: string
+
+                #******* Adding replicas field *******#
+                replicas:
+                  type: integer
+                # *********************************#
                 expose:
                   type: array
                   items:
