@@ -18,7 +18,7 @@
     - If the App CRD is applied and the one of the its components is not yet created, the status of the app will be pending.
 
 ## Communication between two applications CRD
-- The `communicationBetweenTwoApps` CRD allows communication between two components of different apps. [Check this exampel]([https://www.youtube.com/watch?v=TikEgvwhdJ8](https://github.com/skandarchahbouni/manifests/blob/main/communications_between_two_applications.pdf))
+- The `communicationBetweenTwoApps` CRD allows communication between two components of different apps. [Check this example](https://github.com/skandarchahbouni/manifests/blob/main/communications_between_two_applications.pdf)
 
 ## Templates
 
