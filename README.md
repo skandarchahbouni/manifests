@@ -15,7 +15,7 @@
     * `Application CRD` and `Component CRD` separated.
     - The App CRD must be applied     first, and then the components of the app. If the Component CRD is applied before the App CRD, an exception will be fired.
 
-    - If the App CRD is applied and the one of the its components is not yet created, the status of the app will be pending.
+    - If the App CRD is applied and the one of the its components is not yet created, the status of the app will be pending in the deployment template.
 
 ## Communication between two applications CRD
 - The `communicationBetweenTwoApps` CRD allows communication between two components of different apps. [Check this video](https://www.youtube.com/watch?v=TikEgvwhdJ8)
