@@ -28,32 +28,3 @@
 * An operator for the `communicationBetweenTwoApps` CRD must be implemented  (easy to implement, just configure the ExternalNameService_template and apply it).
 * Adding a `Daemon or timer` handler to watch and update the status of the CRD instance.
 
-
-
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://link-to-project
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
