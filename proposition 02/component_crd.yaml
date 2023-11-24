@@ -30,8 +30,12 @@ spec:
                 app:
                   type: string
                 # *********************************************#
-                cluster:
-                  type: string
+
+                # ************* Removing this field *************#
+                # cluster-selector:
+                #   type: string
+                # *********************************************#
+
                 image:
                   type: string
 
