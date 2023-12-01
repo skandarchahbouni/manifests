@@ -26,10 +26,9 @@ spec:
               properties:
                 name:
                   type: string
-                #******* Removing this field *******#
-                # cluster:    ===> REMOVING THIS FIELD
-                #   type: string
-                # *********************************#
+
+                app-cluster:  
+                  type: string
                 owner:
                   type: string
 
@@ -44,16 +43,6 @@ spec:
                       cluster: 
                         type: string
                 # *********************************#
-
-                #******* Adding this field (communications between components in the same application: for offloading namespace......) *******#
-                internalcommuinications:
-                  type: array
-                  items:
-                    type: array
-                    minItems: 2
-                    maxItems: 2
-                    items:
-                      type: string
                       
             # ************************ Status ************************#
             status:
